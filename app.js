@@ -1,19 +1,19 @@
-// getUsers fetch'er (henter) data fra https://dummyjson.com/users (test i browser)
+// getData fetch'er (henter) data fra https://dummyjson.com/users (test i browser)
 // https://dummyjson.com/ er en API hvor man kan tilgå testdata
 // fx https://dummyjson.com/users, https://dummyjson.com/posts eller https://dummyjson.com/products
-function getUsers() {
+function getData() {
     fetch("https://dummyjson.com/users") // fetch'er/ henter fra data fra https://dummyjson.com/users
         .then(response => response.json()) // laver data om fra JSON til JavaScript data (objekter og arrays)
         .then(data => {
             console.log(data); // logger data i console
-            displayUsers(data.users); // kalder displayUsers-funktionen med listen/array af users
+            displayData(data.users); // kalder displayData-funktionen med listen/array af users
         }); // dette er et eksempel på asynkron kode, da vi med "then" venter på at data er hentet og JSON er lavet om til JavaScript
 }
 
-// På baggrund af en liste af users, tilføjer displayUsers tilføjer ny HTML til DOM'en
+// På baggrund af en liste af users, tilføjer displayData tilføjer ny HTML til DOM'en
 // listOfUsers er et funktionsparameter.
-// I getUsers kan man se hvordan listen af users bliver sendt med som parameter
-function displayUsers(listOfUsers) {
+// I getData kan man se hvordan listen af users bliver sendt med som parameter
+function displayData(listOfUsers) {
     // for loop til at gennemløbe listOfUsers
     for (let index = 0; index < listOfUsers.length; index++) {
         const user = listOfUsers[index]; // en const til at holde én bruger for hvert gennemløb. Prøv evt. at logge user.
@@ -33,7 +33,7 @@ function displayUsers(listOfUsers) {
     }
 }
 
-// kalder funktionen getUsers for at igangsætte det hele
-// dvs JavaScript loades -> getUsers kaldes -> getUsers fetch'er data
-// -> getUsers kalder displayUsers -> displayUsers tilføjer/ indsætter HTML i DOM
-getUsers();
+// kalder funktionen getData for at igangsætte det hele
+// dvs JavaScript loades -> getData kaldes -> getData fetch'er data
+// -> getData kalder displayData -> displayData tilføjer/ indsætter HTML i DOM
+getData();
