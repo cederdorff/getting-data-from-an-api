@@ -24,8 +24,7 @@ function displayData(listOfUsers) {
         document.querySelector("#users-grid").innerHTML += /*html*/ `
             <article>
                 <img src="${user.image}"/>
-                <h2>${user.firstName} ${user.lastName}</h2>
-                <p>Age: ${user.age} years old</p>
+                <p>${user.age} years old</p>
             </article>
         `;
         // user.image, user.firstName, user.lastName og user.age er properties på user-objekterne.
