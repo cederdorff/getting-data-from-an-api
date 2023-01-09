@@ -2,7 +2,7 @@
 // https://dummyjson.com/ er en API hvor man kan tilgå testdata
 // fx https://dummyjson.com/users, https://dummyjson.com/posts eller https://dummyjson.com/products
 function getData() {
-    fetch("https://dummyjson.com/users") // fetch'er/ henter fra data fra https://dummyjson.com/users
+    fetch("http://localhost:3000/users") // fetch'er/ henter fra data fra https://dummyjson.com/users
         .then(response => response.json()) // laver data om fra JSON til JavaScript data (objekter og arrays)
         .then(data => {
             console.log(data); // logger data i console
